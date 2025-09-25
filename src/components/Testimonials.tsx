@@ -12,7 +12,7 @@ const Testimonials = () => {
       highlight: "Mayor seguridad"
     },
     {
-      name: "Abner Días",
+      name: "Abner Díaz",
       role: "Director - Espacio Digital",
       avatar: "/testimonials/abner.jpeg?auto=compress&cs=tinysrgb&w=150",
       content: "Las reuniones corporativas ahora son mucho más organizadas. El control de acceso con QR ha eliminado las largas filas y el registro manual. Nuestros clientes quedan impresionados con la tecnología.",
