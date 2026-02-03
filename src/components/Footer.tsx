@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Instagram, Mail, Phone, MapPin, Shield, Smartphone, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
