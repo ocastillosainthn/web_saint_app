@@ -137,7 +137,7 @@ const PoliticasPrivacidad = () => {
             </p>
             <div className="space-y-2 text-gray-300">
               <p><strong>Correo electrónico:</strong> <a href="mailto:info@sainthn.com" className="text-blue-400 hover:text-blue-300">info@sainthn.com</a></p>
-              <p><strong>Sitio Web:</strong> <a href="https://saint.sainthn.com" className=\"text-blue-400 hover:text-blue-300">saint.sainthn.com</a></p>
+              <p><strong>Sitio Web:</strong> <a href="https://saint.sainthn.com" className="text-blue-400 hover:text-blue-300">saint.sainthn.com</a></p>
             </div>
           </div>
         </div>
