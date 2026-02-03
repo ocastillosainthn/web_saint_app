@@ -10,7 +10,12 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
+
+
+// 1. Verifica que la importación sea exactamente así:
 import PoliticasPrivacidad from './pages/PoliticasPrivacidad';
+
+
 
 
 
@@ -49,7 +54,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
         
-          <Route path="/politicas-privacidad" element={<PoliticasPrivacidad />} />
+        
+<Route path="/politicas-de-privacidad" element={<PoliticasPrivacidad />} />
           
         </Routes>
       </div>
