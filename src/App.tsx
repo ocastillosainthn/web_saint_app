@@ -12,6 +12,9 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import PoliticasPrivacidad from './pages/PoliticasPrivacidad';
 
+
+
+
 function App() {
   return (
     <Router>
@@ -45,7 +48,9 @@ function App() {
           } />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
-          <Route path="/politicas-de-privacidad" element={<PoliticasPrivacidad />} />
+        
+          // 2. Dentro de <Routes> añade esto:
+          <Route path="/politicas-privacidad" element={<PoliticasPrivacidad />} />
         </Routes>
       </div>
     </Router>
