@@ -162,7 +162,13 @@ const Footer = () => {
               © 2025 SAINTHN. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-6 text-sm">
-              
+              <Link to="/politicas-de-privacidad" 
+                className="text-gray-400 hover:text-white transition-colors duration-300"> Política de Privacidad
+              </Link>
+  
+              <Link to="/terminos-de-servicio" 
+                className="text-gray-400 hover:text-white transition-colors duration-300">Términos de Servicio
+              </Link>
             </div>
           </div>
         </div>
