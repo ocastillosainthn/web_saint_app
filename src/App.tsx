@@ -10,6 +10,7 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
+import PoliticasPrivacidad from './pages/PoliticasPrivacidad';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           } />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/politicas-de-privacidad" element={<PoliticasPrivacidad />} />
         </Routes>
       </div>
     </Router>

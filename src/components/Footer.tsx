@@ -165,6 +165,9 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 Política de Privacidad
               </a>
+              <a href="/politicas-de-privacidad" className="text-gray-400 hover:text-white transition-colors duration-300">
+                Políticas de Privacidad
+              </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 Términos de Servicio
               </a>
