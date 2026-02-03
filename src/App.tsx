@@ -49,8 +49,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
         
-          // 2. Dentro de <Routes> añade esto:
           <Route path="/politicas-privacidad" element={<PoliticasPrivacidad />} />
+          
         </Routes>
       </div>
     </Router>
