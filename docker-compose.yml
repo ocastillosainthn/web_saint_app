@@ -1,7 +1,9 @@
 version: '3.8'
+
 services:
   mi-sitio-saint:
-    build: .  # Esto le dice que use el Dockerfile
+    # IMPORTANTE: Esto le dice a Portainer que use el Dockerfile que creamos
+    build: .
     image: saint-site:latest
     networks:
       - saint_sainthn_default
@@ -9,9 +11,10 @@ services:
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.saint-router.rule=Host(`saint.sainthn.com`)"
+        - "traefik.http.routers.saint-router.entrypoints=web"
         - "traefik.http.services.saint-service.loadbalancer.server.port=80"
-    restart_policy:
-      condition: on-failure
+      restart_policy:
+        condition: on-failure
 
 networks:
   saint_sainthn_default:
