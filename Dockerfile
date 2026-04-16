@@ -1,14 +1,19 @@
-# Etapa 1: Compilar el código de Vite/React
-FROM node:18-alpine as build
+# Etapa 1: Instalación y Compilación
+FROM node:18-alpine AS build
 WORKDIR /app
+
+# Copiamos solo los archivos de dependencias primero para aprovechar la caché de Docker
 COPY package*.json ./
 RUN npm install
+
+# Copiamos el resto del código y compilamos
 COPY . .
 RUN npm run build
 
-# Etapa 2: Servidor web para entregar el sitio
+# Etapa 2: Servidor Web (Nginx)
 FROM nginx:alpine
-# Vite genera por defecto la carpeta 'dist'
+# Copiamos la carpeta 'dist' que generó Vite a la carpeta que sirve Nginx
 COPY --from=build /app/dist /usr/share/nginx/html
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
