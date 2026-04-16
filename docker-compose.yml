@@ -4,7 +4,7 @@ services:
   mi-sitio-saint:
     image: nginx:alpine
     ports:
-      - "8080:80" # El puerto 8080 será por donde accedas externamente
+      - "80:80" # El puerto 8080 será por donde accedas externamente
     volumes:
       - ./:/usr/share/nginx/html:ro # Copia los archivos de tu repo al servidor web
     restart: always
