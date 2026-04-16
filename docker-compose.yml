@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  app:
+  web:
     build: .
-    image: saint-site:latest
+    image: saint-web-app:latest
     networks:
       - saint_sainthn_default
     deploy:
