@@ -3,8 +3,18 @@ version: '3.8'
 services:
   mi-sitio-saint:
     image: nginx:alpine
-    ports:
-      - "80:80" # El puerto 8080 será por donde accedas externamente
+    # NO usamos "ports", Traefik se encarga
+    networks:
+      - traefik_network # Asegúrate de que este sea el nombre de la red de tu Traefik
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.saint.rule=Host(`saint.sainthn.com`)"
+        - "traefik.http.services.saint.loadbalancer.server.port=80"
     volumes:
-      - ./:/usr/share/nginx/html:ro # Copia los archivos de tu repo al servidor web
+      - ./:/usr/share/nginx/html:ro
     restart: always
+
+networks:
+  traefik_network:
+    external: true
