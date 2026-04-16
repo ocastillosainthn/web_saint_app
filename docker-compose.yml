@@ -3,18 +3,18 @@ version: '3.8'
 services:
   mi-sitio-saint:
     image: nginx:alpine
-    # NO usamos "ports", Traefik se encarga
     networks:
-      - traefik_network # Asegúrate de que este sea el nombre de la red de tu Traefik
+      - saint_sainthn_default # Usamos la red que ya creó tu propio stack
     deploy:
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.saint.rule=Host(`saint.sainthn.com`)"
-        - "traefik.http.services.saint.loadbalancer.server.port=80"
+        - "traefik.http.routers.saint-router.rule=Host(`saint.sainthn.com`)"
+        - "traefik.http.services.saint-service.loadbalancer.server.port=80"
+      restart_policy:
+        condition: on-failure
     volumes:
       - ./:/usr/share/nginx/html:ro
-    restart: always
 
 networks:
-  traefik_network:
+  saint_sainthn_default:
     external: true
