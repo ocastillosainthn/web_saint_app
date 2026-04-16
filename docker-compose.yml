@@ -1,25 +1,17 @@
 version: '3.8'
-
 services:
   mi-sitio-saint:
-    image: nginx:alpine
+    build: .  # Esto le dice que use el Dockerfile
+    image: saint-site:latest
     networks:
-      # Es vital que esta red sea la misma que usa el contenedor de Traefik
       - saint_sainthn_default
     deploy:
       labels:
         - "traefik.enable=true"
-        # Cambiamos el nombre del router para que sea único
-        - "traefik.http.routers.saint-new.rule=Host(`saint.sainthn.com`)"
-        # Forzamos a que escuche en el puerto 80 de entrada (entrypoint web)
-        - "traefik.http.routers.saint-new.entrypoints=web"
-        # Especificamos el puerto interno del servidor Nginx
-        - "traefik.http.services.saint-new-service.loadbalancer.server.port=80"
-      restart_policy:
-        condition: on-failure
-    volumes:
-      # Al estar en la raíz, esto mapea el contenido actual al servidor
-      - ./:/usr/share/nginx/html:ro
+        - "traefik.http.routers.saint-router.rule=Host(`saint.sainthn.com`)"
+        - "traefik.http.services.saint-service.loadbalancer.server.port=80"
+    restart_policy:
+      condition: on-failure
 
 networks:
   saint_sainthn_default:
